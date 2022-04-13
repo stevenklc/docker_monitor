@@ -10,8 +10,6 @@ services:
         - '9090:9090'
         command:
         - --config.file=/etc/prometheus/prometheus.yml
-          #- -m 1000m
-          #- --memory-swap -1
         volumes: 
         - /opt/docker_tool/prometheus.yml:/etc/prometheus/prometheus.yml
         networks:
@@ -22,8 +20,6 @@ services:
         user: root
         volumes:                                                                                                                              
         - /opt/docker_tool/grafana/data:/var/lib/grafana
-        - -m 300m
-        - --memory-swap -1
         ports: 
         - '3000:3000'
         depends_on: 
@@ -55,8 +51,6 @@ services:
         - /opt/jenkins_home:/opt/jenkins_home
         - /opt/jenkins_home/servers/identity/app:/srv/app
         - /var/run/docker.sock:/var/run/docker.sock
-        - -m 300m
-        - --memory-swap -1
         ports:
         - '8080:8080'
         - '50000:50000'
