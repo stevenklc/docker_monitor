@@ -17,6 +17,7 @@ services:
     grafana:
         container_name: grafana
         image: grafana/grafana
+        user: root
         volumes:                                                                                                                              
         - /opt/docker_tool/grafana/data:/var/lib/grafana
         ports: 
